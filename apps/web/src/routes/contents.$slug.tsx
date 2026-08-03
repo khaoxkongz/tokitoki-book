@@ -73,8 +73,10 @@ function RouteComponent() {
     <div className="min-h-screen bg-[oklch(0.2964_0.0036_106.61)]">
       <div
         className={cn(
-          "fixed top-0 right-0 left-0 z-50 border-b border-zinc-800/50 bg-zinc-900/95 pt-[env(safe-area-inset-top)] backdrop-blur-sm transition-[transform,opacity,visibility] duration-300",
-          areControlsVisible ? "visible translate-y-0 opacity-100" : "invisible -translate-y-full opacity-0",
+          "fixed top-0 right-0 left-0 z-50 border-b border-zinc-800/50 bg-zinc-900/95 pt-[env(safe-area-inset-top)] backdrop-blur-sm transition-[transform,opacity,visibility] ease-(--motion-ease-out) motion-reduce:transform-none motion-reduce:transition-[opacity,visibility] motion-reduce:duration-(--motion-duration-reduced)",
+          areControlsVisible
+            ? "visible translate-y-0 opacity-100 duration-(--motion-duration-control-enter)"
+            : "invisible -translate-y-full opacity-0 duration-(--motion-duration-control-exit)",
         )}
         aria-hidden={!areControlsVisible}
       >
@@ -92,7 +94,7 @@ function RouteComponent() {
           </div>
           <div
             onClick={() => navigate({ to: "/" })}
-            className="-m-1 flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-lg p-1 transition-colors hover:bg-zinc-800/50"
+            className="-m-1 flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-lg p-1 transition-[background-color,transform] duration-(--motion-duration-press) ease-(--motion-ease-out) hover:bg-zinc-800/50 active:scale-[0.97] motion-reduce:transform-none"
           >
             <div className="w-10 min-w-10 shrink-0">
               <img
@@ -133,8 +135,10 @@ function RouteComponent() {
       </div>
       <div
         className={cn(
-          "fixed right-0 bottom-0 left-0 z-50 border-t border-zinc-800/50 bg-zinc-900/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-sm transition-[transform,opacity,visibility] duration-300",
-          areControlsVisible ? "visible translate-y-0 opacity-100" : "invisible translate-y-full opacity-0",
+          "fixed right-0 bottom-0 left-0 z-50 border-t border-zinc-800/50 bg-zinc-900/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-sm transition-[transform,opacity,visibility] ease-(--motion-ease-out) motion-reduce:transform-none motion-reduce:transition-[opacity,visibility] motion-reduce:duration-(--motion-duration-reduced)",
+          areControlsVisible
+            ? "visible translate-y-0 opacity-100 duration-(--motion-duration-control-enter)"
+            : "invisible translate-y-full opacity-0 duration-(--motion-duration-control-exit)",
         )}
         aria-hidden={!areControlsVisible}
       >

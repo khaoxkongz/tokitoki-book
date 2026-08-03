@@ -52,6 +52,13 @@
 }
 
 :root {
+  --motion-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-duration-control-enter: 200ms;
+  --motion-duration-control-exit: 160ms;
+  --motion-duration-press: 160ms;
+  --motion-duration-popover-enter: 150ms;
+  --motion-duration-popover-exit: 100ms;
+  --motion-duration-reduced: 200ms;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
   --card: oklch(1 0 0);
