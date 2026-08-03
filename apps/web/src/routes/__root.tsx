@@ -1,6 +1,4 @@
-import { TanStackDevtools } from "@tanstack/react-devtools";
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
-import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 
 import { ThemeProvider } from "#/components/theme-provider";
 
@@ -37,18 +35,20 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="th" suppressHydrationWarning>
+    <html
+      lang="th"
+      suppressHydrationWarning
+    >
       <head>
         <HeadContent />
       </head>
       <body className="min-h-dvh bg-[oklch(0.2964_0.0036_106.61)] p-4 antialiased">
-        <ThemeProvider defaultTheme="system" storageKey="theme">
+        <ThemeProvider
+          defaultTheme="system"
+          storageKey="theme"
+        >
           {children}
         </ThemeProvider>
-        <TanStackDevtools
-          config={{ position: "bottom-right" }}
-          plugins={[{ name: "Tanstack Router", render: <TanStackRouterDevtoolsPanel /> }]}
-        />
         <Scripts />
       </body>
     </html>

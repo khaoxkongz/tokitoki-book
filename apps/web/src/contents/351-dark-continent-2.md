@@ -1,6 +1,7 @@
 ---
-title: ตอนที่ 351 - Dark Continent [2]
+title: Dark Continent [2]
 description: My first blog post
+episode: 351
 published: 2024-01-15
 authors:
   - Jane Doe

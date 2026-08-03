@@ -13,6 +13,7 @@ var contents = defineCollection({
   schema: z.object({
     title: z.string(),
     published: z.string().date(),
+    episode: z.number().int().positive(),
     description: z.string().optional(),
     authors: z.string().array(),
     content: z.string()

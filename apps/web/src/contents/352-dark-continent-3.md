@@ -1,6 +1,7 @@
 ---
-title: ตอนที่ 352 - Dark Continent [3]
+title: Dark Continent [3]
 description: My first blog post
+episode: 352
 published: 2024-01-15
 authors:
   - Jane Doe

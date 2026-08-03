@@ -36,7 +36,13 @@ export function Markdown({ content, className }: MarkdownProps) {
 
         if (domNode.name === "img") {
           // Add lazy loading to images
-          return <img {...domNode.attribs} loading="lazy" className="rounded-lg shadow-md" />;
+          return (
+            <img
+              {...domNode.attribs}
+              loading="lazy"
+              className="rounded-lg shadow-md"
+            />
+          );
         }
       }
     },

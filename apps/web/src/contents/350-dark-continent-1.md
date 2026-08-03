@@ -1,6 +1,7 @@
 ---
-title: ตอนที่ 350 - Dark Continent [1]
+title: Dark Continent [1]
 description: My first blog post
+episode: 350
 published: 2024-01-15
 authors:
   - Jane Doe

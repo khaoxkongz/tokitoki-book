@@ -2,6 +2,7 @@ import { defineConfig } from "vite-plus";
 
 export default defineConfig({
   fmt: {
+    singleAttributePerLine: true,
     printWidth: 120,
     sortTailwindcss: {
       functions: ["clsx", "cn", "cva", "tw"],

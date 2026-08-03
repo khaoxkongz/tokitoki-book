@@ -1,6 +1,7 @@
 ---
-title: ตอนที่ 353 - Dark Continent [4]
+title: Dark Continent [4]
 description: My first blog post
+episode: 353
 published: 2024-01-15
 authors:
   - Jane Doe
