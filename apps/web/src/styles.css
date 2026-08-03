@@ -149,7 +149,7 @@
   --typeset-font-body: "Cordia New", var(--font-geist);
   --typeset-font-heading: "Cordia New", var(--font-geist);
   --typeset-font-mono: var(--font-geist-mono);
-  --typeset-size: 24px;
+  --typeset-size: 28px;
   --typeset-leading: 1.25;
   --typeset-flow: 1.25em;
 }
