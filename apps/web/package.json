@@ -17,6 +17,7 @@
     "@content-collections/vite": "^0.3.0",
     "@fontsource-variable/geist": "catalog:",
     "@fontsource-variable/geist-mono": "catalog:",
+    "@fontsource/bai-jamjuree": "catalog:",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-router": "latest",
