@@ -36,6 +36,7 @@ function RouteComponent() {
 
   const navigate = useNavigate();
 
+  const [areControlsVisible, setAreControlsVisible] = React.useState(false);
   const [scrollFade, setScrollFade] = React.useState({ top: false, bottom: false });
 
   React.useEffect(() => {
@@ -71,12 +72,11 @@ function RouteComponent() {
   return (
     <div className="min-h-screen bg-[oklch(0.2964_0.0036_106.61)]">
       <div
-        style={{
-          top: "0px",
-          visibility: "visible",
-          transition: "transform 300ms, opacity 300ms, visibility 300ms",
-        }}
-        className="fixed right-0 left-0 z-50 translate-y-0 border-b border-zinc-800/50 bg-zinc-900/95 pt-[env(safe-area-inset-top)] opacity-100 backdrop-blur-sm"
+        className={cn(
+          "fixed top-0 right-0 left-0 z-50 border-b border-zinc-800/50 bg-zinc-900/95 pt-[env(safe-area-inset-top)] backdrop-blur-sm transition-[transform,opacity,visibility] duration-300",
+          areControlsVisible ? "visible translate-y-0 opacity-100" : "invisible -translate-y-full opacity-0",
+        )}
+        aria-hidden={!areControlsVisible}
       >
         <div className="mx-auto flex w-full max-w-[1285px] items-center justify-between px-3 py-4 md:w-[95%] md:px-0">
           <div className="mr-3 flex shrink-0 items-center justify-start">
@@ -131,7 +131,13 @@ function RouteComponent() {
           </div>
         </div>
       </div>
-      <div className="fixed right-0 bottom-0 left-0 z-50 translate-y-0 border-t border-zinc-800/50 bg-zinc-900/95 pb-[env(safe-area-inset-bottom)] opacity-100 backdrop-blur-sm">
+      <div
+        className={cn(
+          "fixed right-0 bottom-0 left-0 z-50 border-t border-zinc-800/50 bg-zinc-900/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-sm transition-[transform,opacity,visibility] duration-300",
+          areControlsVisible ? "visible translate-y-0 opacity-100" : "invisible translate-y-full opacity-0",
+        )}
+        aria-hidden={!areControlsVisible}
+      >
         <div className="mx-auto flex w-full max-w-[1285px] items-center justify-between gap-2 px-3 pt-4 pb-6 md:w-[95%] md:px-0">
           <Button
             type="button"
@@ -194,7 +200,10 @@ function RouteComponent() {
         </div>
       </div>
 
-      <div className="select-none">
+      <div
+        className="select-none"
+        onClick={() => setAreControlsVisible((isVisible) => !isVisible)}
+      >
         <article className="typeset typeset-docs mx-auto max-w-[75ch] rounded-xl border border-[oklch(0.9816_0.0026_106.45/10%)] bg-[oklch(0.499_0.0031_106.51/25%)] p-[clamp(1rem,3vw,1.75rem)] text-[oklch(0.9816_0.0026_106.45)] transition-[border-color] hover:border-[oklch(0.9816_0.0026_106.45/25%)]">
           <Markdown content={post.content} />
         </article>
